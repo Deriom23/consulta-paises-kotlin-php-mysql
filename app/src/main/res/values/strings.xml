@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Consulta de países</string><string name="title">Consulta de países</string>
+    <string name="subtitle">Busca información básica de un país</string>
+    <string name="country_hint">Escribe un país, por ejemplo: Peru</string>
+    <string name="search">Buscar</string><string name="history">Historial</string>
+    <string name="capital">Capital</string>
+    <string name="continent">Continente</string><string name="population">Población</string>
+    <string name="income_level">Nivel de ingresos</string><string name="coordinates">Coordenadas</string>
+    <string name="empty_country">Escribe el nombre de un país</string>
+    <string name="connection_error">No se pudo conectar con XAMPP. Verifica Apache, la red y la dirección del servidor.</string>
+    <string name="history_title">Historial</string>
+    <string name="history_empty">Todavía no has consultado países.</string>
+    <string name="clear_history">Vaciar historial</string>
+    <string name="clear_question">¿Deseas borrar todas las búsquedas guardadas?</string>
+    <string name="cancel">Cancelar</string><string name="delete">Borrar</string>
+    <string name="history_cleared">Historial eliminado</string>
+    <string name="searched_as">Búsqueda: %1$s</string>
+</resources>

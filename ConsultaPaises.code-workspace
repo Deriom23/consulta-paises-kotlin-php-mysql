@@ -1,0 +1,9 @@
+{
+    "folders": [
+        { "name": "Android Kotlin", "path": "." },
+        { "name": "PHP XAMPP", "path": "./backend" }
+    ],
+    "settings": {
+        "files.encoding": "utf8"
+    }
+}
