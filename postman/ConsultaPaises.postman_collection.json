@@ -1,0 +1,104 @@
+{
+  "info": {
+    "name": "ConsultaPaises TXT y API internacional",
+    "description": "Pruebas de búsqueda, historial, validación y API del Banco Mundial. El TXT se genera en Android a partir de la ficha mostrada; no requiere otro endpoint. Las búsquedas válidas agregan un registro al historial. No se incluye borrado de historial.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080/consulta_paises_api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Buscar Peru",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/search_country.php?name=Peru"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Estado HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Respuesta esperada', function () {",
+              "pm.expect(pm.response.json().data.code).to.eql('PE');",
+              "pm.expect(pm.response.json().data.capital).to.eql('Lima');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Consultar historial",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/history.php"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Estado HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Respuesta esperada', function () {",
+              "pm.expect(pm.response.json().data).to.be.an('array');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Validar nombre vacío",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/search_country.php?name="
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Estado HTTP 422', function () { pm.response.to.have.status(422); });",
+              "pm.test('Respuesta esperada', function () {",
+              "pm.expect(pm.response.json().success).to.eql(false);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Consultar Banco Mundial",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://api.worldbank.org/v2/country/PER?format=json"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Estado HTTP 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Respuesta esperada', function () {",
+              "pm.expect(pm.response.json()[1][0].iso2Code).to.eql('PE');",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

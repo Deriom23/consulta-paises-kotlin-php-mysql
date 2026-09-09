@@ -1,4 +1,7 @@
 <resources>
+    <string name="download_txt">Descargar información TXT</string>
+    <string name="txt_saved">Archivo TXT guardado en la ubicación elegida</string>
+    <string name="txt_error">No se pudo guardar el TXT. Intenta otra ubicación.</string>
     <string name="app_name">Consulta de países</string><string name="title">Consulta de países</string>
     <string name="subtitle">Busca información básica de un país</string>
     <string name="country_hint">Escribe un país, por ejemplo: Peru</string>

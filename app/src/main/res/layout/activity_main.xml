@@ -37,6 +37,13 @@
                     android:layout_marginTop="12dp" android:textColor="@color/navy" android:textSize="25sp" android:textStyle="bold" />
                 <TextView android:id="@+id/countryDetails" android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:layout_marginTop="10dp" android:lineSpacingExtra="6dp" android:textColor="@color/muted" android:textSize="16sp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/downloadButton"
+                    android:layout_width="match_parent" android:layout_height="54dp"
+                    android:layout_marginTop="18dp" android:text="@string/download_txt"
+                    android:textAllCaps="false" android:textSize="16sp"
+                    app:backgroundTint="@color/blue" app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_download" app:iconGravity="textStart" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
